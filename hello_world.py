@@ -17,3 +17,23 @@ print("\n{0:=>10}".format("분리선\n"))
 
 #리스트의 슬라이싱 기법
 print(a[0:3])
+
+a.clear
+a = [1, 2, 3]
+b = [2, 3, 4]
+print(a+b)
+print(a*3)
+print(len(a))
+
+del a[2]
+print("리스트a 의 3변째 요소값이 삭제됨")
+print(a)
+print("다시 3번째 요소 자리에 4가 들어감")
+a.append(4)
+print(a)
+
+# sort함수는 리스트의 요소를 준서대로 정렬해준다.
+a.clear()
+a = [3, 2, 4, 1]
+a.sort()
+print(a)
