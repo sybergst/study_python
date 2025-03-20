@@ -32,10 +32,45 @@
 #     print(count , end=" ")
 
 #단어에 들어간 알파벳 위치 찾기
-word = input()
-num_len = len(word)
+# word = input()
+# num_len = len(word)
 
-for j in range(26):
-    for i in range(num_len):
-        spot = word.find(chr(j+97))
-    print(spot, end=" ")
+# for j in range(26):
+#     for i in range(num_len):
+#         spot = word.find(chr(j+97))
+#     print(spot, end=" ")
+
+# 문자열 반복
+
+# num = int(input())
+
+# for i in range(num):
+#     R, S = input().split()
+#     R = int(R)
+#     count = len(S)
+#     for j in range(count):
+#         print(S[j]*R, end="")
+#     print("")
+
+# 다이얼
+
+# ring = ["ABC","DEF","GHI","JKL","MNO","PQRS","TUV","WXYZ"]
+# word = input()
+# lenth = len(word)
+# time = 0
+# for i in range(lenth):
+#     for j in range(8):
+#         ans = ring[j].find(word[i])
+#         if ans == -1:
+#             continue
+#         else:
+#             time += j + 3
+# print(time)
+
+#그대로 출력하기
+while 1:
+    try:
+        word = input()
+        print(word)
+    except:
+        break
