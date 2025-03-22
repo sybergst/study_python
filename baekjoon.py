@@ -68,9 +68,51 @@
 # print(time)
 
 #그대로 출력하기
-while 1:
-    try:
-        word = input()
-        print(word)
-    except:
-        break
+# while 1:
+#     try:
+#         word = input()
+#         print(word)
+#     except:
+#         break
+
+#올바른 체스말 개수 구하기
+# co_chess = [1, 1, 2, 2, 2, 8]
+# now_chess = list(map(int, input().split(" ")))
+# ans = []
+
+# for i in range(6):
+#     ans.append(co_chess[i] - now_chess[i])
+# print(*ans, sep=" ")
+
+#문장속 단어의 개수 찾기
+# words = input().split(" ")
+# a = len(words)
+# b = words.count("")
+# print(a-b)
+
+
+#x보다 작은 수 찾기
+# a, b = map(int, input().split(" "))
+# num = list(map(int, input().split(" ")))
+# ans = []
+# for i in range(a):
+#     if b > num[i]:
+#         ans.append(num[i])
+# print(*ans, sep=" ")
+
+count = int(input())
+ans = ""
+
+for i in range(count):
+    bb = 0
+    point = 1
+    ans = input()
+    for j in range(len(ans)):
+        if ans[j] == "O":
+            bb += point
+            point += 1
+        elif ans[j] == "X":
+            point = 1
+    print(bb)
+
+
