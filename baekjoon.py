@@ -100,19 +100,41 @@
 #         ans.append(num[i])
 # print(*ans, sep=" ")
 
-count = int(input())
-ans = ""
+#ox퀴즈 점수내기
+# count = int(input())
+# ans = ""
 
-for i in range(count):
-    bb = 0
-    point = 1
-    ans = input()
-    for j in range(len(ans)):
-        if ans[j] == "O":
-            bb += point
-            point += 1
-        elif ans[j] == "X":
-            point = 1
-    print(bb)
+# for i in range(count):
+#     bb = 0
+#     point = 1
+#     ans = input()
+#     for j in range(len(ans)):
+#         if ans[j] == "O":
+#             bb += point
+#             point += 1
+#         elif ans[j] == "X":
+#             point = 1
+#     print(bb)
 
+#호텔 호수 구하기
+# test = int(input())
+# for i in range(test):
+#     H, W, N = map(int, input().split(" "))
+#     loc = [0, 1]
+#     for j in range(N):
+#         if loc[0] == H:
+#             loc[0] = 1
+#             loc[1] += 1
+#         else:
+#             loc[0] += 1
 
+#     if loc[1] < 10:
+#         print(str(loc[0]) + "0" + str(loc[1]))
+#     else:
+#         print(str(loc[0]) + str(loc[1]))
+
+num = int(input())
+
+a = input().split(" ")
+word = input()
+print(a.count(word))

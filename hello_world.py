@@ -37,3 +37,14 @@ a.clear()
 a = [3, 2, 4, 1]
 a.sort()
 print(a)
+
+#딕셔너리 다료형
+dic = {'name': 'pey', 'phone': '010-9999-1234', 'birth': '1118'}
+
+# 추가
+dic[1] = "hello"
+print(dic)
+del dic[1]
+print(dic)
+b = dic.keys()
+print(b)
