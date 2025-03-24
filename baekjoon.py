@@ -134,7 +134,13 @@
 #         print(str(loc[0]) + str(loc[1]))
 
 num = int(input())
-
-a = input().split(" ")
-word = input()
-print(a.count(word))
+star = 0
+for i in range(num*2-1):
+    if i < num:
+        star = 1 + 2*i
+        st = "{0:^{1}}".format("*"*star,num*2-1)
+        print(st.rstrip())
+    else:
+        star = num*2-1 - 2*(i - num + 1)
+        st = "{0:^{1}}".format("*"*star,num*2-1)
+        print(st.rstrip())
