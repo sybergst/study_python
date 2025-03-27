@@ -133,14 +133,27 @@
 #     else:
 #         print(str(loc[0]) + str(loc[1]))
 
-num = int(input())
-star = 0
-for i in range(num*2-1):
-    if i < num:
-        star = 1 + 2*i
-        st = "{0:^{1}}".format("*"*star,num*2-1)
-        print(st.rstrip())
-    else:
-        star = num*2-1 - 2*(i - num + 1)
-        st = "{0:^{1}}".format("*"*star,num*2-1)
-        print(st.rstrip())
+#다이아몬드 그리기
+# num = int(input())
+# star = 0
+# for i in range(num*2-1):
+#     if i < num:
+#         star = 1 + 2*i
+#         st = "{0:^{1}}".format("*"*star,num*2-1)
+#         print(st.rstrip())
+#     else:
+#         star = num*2-1 - 2*(i - num + 1)
+#         st = "{0:^{1}}".format("*"*star,num*2-1)
+#         print(st.rstrip())
+
+A, B, V = map(int, input().split(" "))
+H = 0
+day = 0
+while True:
+    day += 1
+    H += A
+    if H >= V:
+        break
+    H -= B
+
+print(day)
