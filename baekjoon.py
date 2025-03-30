@@ -146,14 +146,15 @@
 #         st = "{0:^{1}}".format("*"*star,num*2-1)
 #         print(st.rstrip())
 
-A, B, V = map(int, input().split(" "))
-H = 0
-day = 0
-while True:
-    day += 1
-    H += A
-    if H >= V:
-        break
-    H -= B
+a, b, c = map(int, input().split(" "))
+sec = int(input())
+h = 0
+m = 0
+s = 0
+if sec >= 3600:
+    h = sec//3600
+if sec % 3600 >= 60:
+    m = (sec % 3600) // 60
+s = sec - h * 3600 - m*60
 
-print(day)
+print(a + h, b + m, c + s)
