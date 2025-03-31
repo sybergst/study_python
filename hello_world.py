@@ -50,6 +50,32 @@
 # print(b)
 
 # for문 활용
-a = [1, 2, 3, 4]
-b = [num * 2 for num in a]
-print(b)
+# a = [1, 2, 3, 4]
+# b = [num * 2 for num in a]
+# print(b)
+
+#파일 활용
+# f = open("/workspaces/study_python/new_file.txt", "w")
+# for i in range(1, 11):
+#     data = "%d번째 줄입니다.\n" % i
+#     f.write(data)
+# f.close()
+
+# f = open("/workspaces/study_python/new_file.txt", "r")
+
+# line = f.readlines()
+# print(line)
+# f.close()
+
+# f = open("/workspaces/study_python/new_file.txt",'a')
+# for i in range(11, 20):
+#     data = "%d번째 줄입니다.\n" % i
+#     f.write(data)
+# f.close()
+
+# sys1.py
+import sys
+
+args = sys.argv[1:]
+for i in args:
+    print(i)
