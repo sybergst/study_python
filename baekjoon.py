@@ -146,8 +146,11 @@
 #         st = "{0:^{1}}".format("*"*star,num*2-1)
 #         print(st.rstrip())
 
-class fourCal():
-    def __init__(self):
-        self.result = 0
-
-    def 
+while True:
+    a, b = map(int, input().split(" "))
+    if a == 0 and b == 0:
+        break
+    elif a > b:
+        print("Yes")
+    else:
+        print("No")

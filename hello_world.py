@@ -73,9 +73,40 @@
 #     f.write(data)
 # f.close()
 
-# sys1.py
-import sys
+#class제작
+# class FourCal:
+#     def __self__(self, first, second):
+#         self.first = first
+#         self.second = second
+#     def setdata(self, first, second):
+#         self.first = first
+#         self.second = second
+#     def add(self):
+#         result = self.first + self.second
+#         return result
+#     def mul(self):
+#          result = self.first * self.second
+#          return result
+#     def sub(self):
+#         result = self.first - self.second
+#         return result
+#     def div(self):
+#         result = self.first / self.second
+#         return result
 
-args = sys.argv[1:]
-for i in args:
-    print(i)
+# class MoreFourCal(FourCal):
+#     def pow(self):
+#         result = self.first ** self.second
+#         return result
+
+#메서드 오버라이딩
+# class SafeFourCal(FourCal):
+#     def div(self):
+#         if self.second == 0:
+#             return 0
+#         else:
+#             return self.first / self.second
+
+# 모듈을 불러올 시 의도치 않은 실행 방지
+# if __name__ == "__main__":
+
