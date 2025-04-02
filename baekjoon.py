@@ -146,11 +146,26 @@
 #         st = "{0:^{1}}".format("*"*star,num*2-1)
 #         print(st.rstrip())
 
-while True:
-    a, b = map(int, input().split(" "))
-    if a == 0 and b == 0:
-        break
-    elif a > b:
-        print("Yes")
+word = input()
+word = word.upper()
+# word = list(word)
+# word.sort()
+many = []
+count = word.count(chr(65))
+many.append(chr(65))
+
+for i in range(1, 26):
+    a = word.count(chr(65 + i))
+    if a > count:
+        many = []
+        count = a
+        many.append(chr(65 + i))
+    elif a < count:
+        pass
     else:
-        print("No")
+        many.append(chr(65 + i))
+
+if len(many) == 1:
+    print(many[0])
+else:
+    print("?")
