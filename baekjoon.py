@@ -146,26 +146,49 @@
 #         st = "{0:^{1}}".format("*"*star,num*2-1)
 #         print(st.rstrip())
 
-word = input()
-word = word.upper()
-# word = list(word)
-# word.sort()
-many = []
-count = word.count(chr(65))
-many.append(chr(65))
+#중복된 문자의 개수 찾기
+# word = input()
+# word = word.upper()
+# # word = list(word)
+# # word.sort()
+# many = []
+# count = word.count(chr(65))
+# many.append(chr(65))
 
-for i in range(1, 26):
-    a = word.count(chr(65 + i))
-    if a > count:
-        many = []
-        count = a
-        many.append(chr(65 + i))
-    elif a < count:
-        pass
-    else:
-        many.append(chr(65 + i))
+# for i in range(1, 26):
+#     a = word.count(chr(65 + i))
+#     if a > count:
+#         many = []
+#         count = a
+#         many.append(chr(65 + i))
+#     elif a < count:
+#         pass
+#     else:
+#         many.append(chr(65 + i))
 
-if len(many) == 1:
-    print(many[0])
-else:
-    print("?")
+# if len(many) == 1:
+#     print(many[0])
+# else:
+#     print("?")
+
+
+#거듭제곱의 일의자리
+# ro = [[0], [1], [2, 4, 8, 6],[3, 9, 7, 1],[4, 6],[5],[6],[7, 9, 3, 1],[8, 4, 2, 6],[9, 1]]
+
+# T = int(input())
+
+# for i in range(T):
+#     a, b = map(int, input().split(" "))
+#     last_a = a % 10
+#     if last_a == 5 or last_a == 6:
+#         print(last_a)
+#     elif last_a == 0:
+#         print(10)
+#     else:
+#         if b % len(ro[last_a]) == 0:
+#             print(ro[last_a][-1])
+#         else:
+#             print(ro[last_a][b % len(ro[last_a]) - 1])
+
+for i in range(2):
+    print("강한친구 대한육군")
