@@ -190,5 +190,33 @@
 #         else:
 #             print(ro[last_a][b % len(ro[last_a]) - 1])
 
-for i in range(2):
-    print("강한친구 대한육군")
+N, K =  map(int, input().split(" "))
+count = 0
+li = []
+if N == 1:
+    print(1)
+else:
+    while True:
+        a = 2
+        while True:
+            if a >= N:
+                a = a // 2
+                break
+            a = a * 2
+        li.append(a)
+        N -= a
+        if N <= 2:
+            li.append(N)
+            break
+              
+if len(li) <= K:
+    print(0)
+else:
+    while len(li) > K:
+        if li[-1] == li[-2]:
+            li.pop()
+            li.append(li.pop()*2)
+        else:
+           li.append(li[-1])
+           count += li[-1]
+    print(count)
