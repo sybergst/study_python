@@ -190,33 +190,59 @@
 #         else:
 #             print(ro[last_a][b % len(ro[last_a]) - 1])
 
-N, K =  map(int, input().split(" "))
-count = 0
-li = []
-if N == 1:
-    print(1)
-else:
-    while True:
-        a = 2
-        while True:
-            if a >= N:
-                a = a // 2
-                break
-            a = a * 2
-        li.append(a)
-        N -= a
-        if N <= 2:
-            li.append(N)
-            break
+#1052번을 풀어보려는 똥꼬쇼
+# N, K =  map(int, input().split())
+# count = 0
+# li = []
+# if N == 1:
+#     print(1)
+# else:
+#     while True:
+#         a = 2
+#         while True:
+#             if a >= N:
+#                 a = a // 2
+#                 break
+#             a = a * 2
+#         li.append(a)
+#         N -= a
+#         if N <= 2:
+#             li.append(N)
+#             break
               
-if len(li) <= K:
-    print(0)
-else:
-    while len(li) > K:
-        if li[-1] == li[-2]:
-            li.pop()
-            li.append(li.pop()*2)
-        else:
-           li.append(li[-1])
-           count += li[-1]
-    print(count)
+# if len(li) <= K:
+#     print(0)
+# else:
+#     while len(li) > K:
+#         if li[-1] == li[-2]:
+#             li.pop()
+#             li.append(li.pop()*2)
+#         else:
+#            li.append(li[-1])
+#            count += li[-1]
+#     print(count)
+
+# N, K =  map(int, input().split())
+# count = 0
+
+# while bin(N).count('1') > K:
+#     count += 1
+#     N += 1
+# print(count)
+# import math
+
+# case = int(input())
+# for i in range(case):
+#     N, M = map(int, input().split())
+#     print(math.factorial(M) // (math.factorial(N) * math.factorial(M - N)))
+
+case = int(input())
+ans = 0
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+a.sort()
+b.sort()
+b.reverse()
+for i in range(case):
+    ans += a[i] * b[i]
+print(ans)
