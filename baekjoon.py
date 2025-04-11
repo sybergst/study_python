@@ -236,13 +236,40 @@
 #     N, M = map(int, input().split())
 #     print(math.factorial(M) // (math.factorial(N) * math.factorial(M - N)))
 
-case = int(input())
-ans = 0
-a = list(map(int, input().split()))
-b = list(map(int, input().split()))
-a.sort()
-b.sort()
-b.reverse()
-for i in range(case):
-    ans += a[i] * b[i]
-print(ans)
+#두 원이 겹치는 점의 개수 구하기
+# case = int(input())
+# for i in range(case):
+#     x1, y1, r1, x2, y2, r2 = map(float, input().split())
+#     distance = ((x1 - x2) ** 2 + (y1 - y2) ** 2)
+#     if distance == 0:
+#         if r1 == r2:
+#             print(-1)
+#         else:
+#             print(0)
+#     elif (r1 - r2) ** 2 < distance < (r1 + r2) ** 2:
+#         print(2)
+#     elif distance == (r1 + r2) ** 2 or distance == (r1 - r2) ** 2:
+#         print(1)
+#     else:
+#         print(0)
+
+import math
+
+N, M = map(int, input().split())
+cost_set = []
+cost_sep = []
+cost = 0
+for i in range(M):
+    a, b = map(int, input().split())
+    cost_set.append(a)
+    cost_sep.append(b)
+
+cost_set.sort()
+cost_sep.sort()
+cost += cost_set[0] * (N // 6)
+N = N % 6
+if cost_sep[0] * N > cost_set[0] * (N // 6):
+    cost += cost_set[0] * (N // 6)
+else:
+    cost += cost_sep[0] * N
+print(cost)
