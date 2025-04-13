@@ -253,23 +253,64 @@
 #     else:
 #         print(0)
 
+#기타줄 최저가 구하기
+# import math
+
+# N, M = map(int, input().split())
+# cost_set = []
+# cost_sep = []
+# cost = 0
+# for i in range(M):
+#     a, b = map(int, input().split())
+#     cost_set.append(a)
+#     cost_sep.append(b)
+
+# cost_set.sort()
+# cost_sep.sort()
+# if cost_set[0] > cost_sep[0] * 6:
+#     cost = cost_sep[0] * N
+# else:
+#     cost += cost_set[0] * (N // 6)
+#     N = N % 6
+#     if cost_sep[0] * N > cost_set[0] * math.ceil((N / 6)):
+#         cost += cost_set[0] * math.ceil((N / 6))
+#     else:
+#         cost += cost_sep[0] * N
+# print(cost)
+from fractions import Fraction
+import sympy
 import math
 
-N, M = map(int, input().split())
-cost_set = []
-cost_sep = []
-cost = 0
-for i in range(M):
-    a, b = map(int, input().split())
-    cost_set.append(a)
-    cost_sep.append(b)
+xa, ya, xb, yb, xc, yc = map(float, input().split())
 
-cost_set.sort()
-cost_sep.sort()
-cost += cost_set[0] * (N // 6)
-N = N % 6
-if cost_sep[0] * N > cost_set[0] * (N // 6):
-    cost += cost_set[0] * (N // 6)
+a, b = sympy.symbols('a ,b')
+li = []
+
+if xa == xb or ya == yb:
+    if (xa == xb and xa == xc) or (ya == yb and ya == yc):
+        print(-1)
+    else:
+        distance1 = math.sqrt(((xa - xb) ** 2 + (ya - yb) ** 2))
+        distance2 = math.sqrt(((xb - xc) ** 2 + (yb - yc) ** 2))
+        distance3 = math.sqrt(((xc - xa) ** 2 + (yc - ya) ** 2))
+        li.append(2 * (distance1 + distance2))
+        li.append(2 * (distance3 + distance2))
+        li.append(2 * (distance3 + distance1))
+        li.sort()
+        print(li[-1] - li[0])
+
 else:
-    cost += cost_sep[0] * N
-print(cost)
+    f1 = sympy.Eq(a * xa + b, ya)
+    f2 = sympy.Eq(a * xb + b, yb)
+    ans = sympy.solve([f1, f2])
+    if float(ans.get(a)) * xc + float(ans.get(b)) == yc:
+        print(-1)
+    else:
+        distance1 = math.sqrt(((xa - xb) ** 2 + (ya - yb) ** 2))
+        distance2 = math.sqrt(((xb - xc) ** 2 + (yb - yc) ** 2))
+        distance3 = math.sqrt(((xc - xa) ** 2 + (yc - ya) ** 2))
+        li.append(2 * (distance1 + distance2))
+        li.append(2 * (distance3 + distance2))
+        li.append(2 * (distance3 + distance1))
+        li.sort()
+        print(li[-1] - li[0])
