@@ -288,7 +288,7 @@ li = []
 
 if xa == xb or ya == yb:
     if (xa == xb and xa == xc) or (ya == yb and ya == yc):
-        print(-1)
+        print(-1.0)
     else:
         distance1 = math.sqrt(((xa - xb) ** 2 + (ya - yb) ** 2))
         distance2 = math.sqrt(((xb - xc) ** 2 + (yb - yc) ** 2))
@@ -304,7 +304,7 @@ else:
     f2 = sympy.Eq(a * xb + b, yb)
     ans = sympy.solve([f1, f2])
     if float(ans.get(a)) * xc + float(ans.get(b)) == yc:
-        print(-1)
+        print(-1.0)
     else:
         distance1 = math.sqrt(((xa - xb) ** 2 + (ya - yb) ** 2))
         distance2 = math.sqrt(((xb - xc) ** 2 + (yb - yc) ** 2))
