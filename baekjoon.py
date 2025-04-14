@@ -277,40 +277,49 @@
 #     else:
 #         cost += cost_sep[0] * N
 # print(cost)
-from fractions import Fraction
-import sympy
-import math
 
-xa, ya, xb, yb, xc, yc = map(float, input().split())
+#1064씨ㅇ이이이발
 
-a, b = sympy.symbols('a ,b')
-li = []
+# import math
 
-if xa == xb or ya == yb:
-    if (xa == xb and xa == xc) or (ya == yb and ya == yc):
-        print(-1.0)
-    else:
-        distance1 = math.sqrt(((xa - xb) ** 2 + (ya - yb) ** 2))
-        distance2 = math.sqrt(((xb - xc) ** 2 + (yb - yc) ** 2))
-        distance3 = math.sqrt(((xc - xa) ** 2 + (yc - ya) ** 2))
-        li.append(2 * (distance1 + distance2))
-        li.append(2 * (distance3 + distance2))
-        li.append(2 * (distance3 + distance1))
-        li.sort()
-        print(li[-1] - li[0])
+# xa, ya, xb, yb, xc, yc = map(float, input().split())
+# li = [] # 3가지 경우의 평행사번형의 둘레
+# li_2 = [] # 두 점으로 이루어진 선분의 길이들
 
-else:
-    f1 = sympy.Eq(a * xa + b, ya)
-    f2 = sympy.Eq(a * xb + b, yb)
-    ans = sympy.solve([f1, f2])
-    if float(ans.get(a)) * xc + float(ans.get(b)) == yc:
-        print(-1.0)
-    else:
-        distance1 = math.sqrt(((xa - xb) ** 2 + (ya - yb) ** 2))
-        distance2 = math.sqrt(((xb - xc) ** 2 + (yb - yc) ** 2))
-        distance3 = math.sqrt(((xc - xa) ** 2 + (yc - ya) ** 2))
-        li.append(2 * (distance1 + distance2))
-        li.append(2 * (distance3 + distance2))
-        li.append(2 * (distance3 + distance1))
-        li.sort()
-        print(li[-1] - li[0])
+# distance1 = round(math.sqrt(((xa - xb) ** 2 + (ya - yb) ** 2)),10)
+# distance2 = round(math.sqrt(((xb - xc) ** 2 + (yb - yc) ** 2)),10)
+# distance3 = round(math.sqrt(((xc - xa) ** 2 + (yc - ya) ** 2)),10)
+# a = round(2 * (distance1 + distance2),10)
+# b = round(2 * (distance3 + distance2),10)
+# c = round(2 * (distance3 + distance1),10)
+# li.append(a)
+# li.append(b)
+# li.append(c)
+# li_2.append(distance1)
+# li_2.append(distance2)
+# li_2.append(distance3)
+# li_2.sort() # 크기순 정렬
+# li.sort()
+
+# if xa == xb or ya == yb: # 두 점이 x축 또는 y축 위에 있는 경우
+#     if (xa == xb and xa == xc) or (ya == yb and ya == yc): # 세 점이 모두 x축 또는 y축 위에 있는 경우
+#         print(-1.0)
+#     else:
+#         print(li[-1] - li[0])
+# else:
+#     d = round(li_2[0] + li_2[1],10)
+#     if d == li_2[2]: # 두 점 사이에 세번째 점이 있는 경우
+#         print(-1.0)
+#     else:
+#         print(li[-1] - li[0])
+
+x, y, w, h = map(int, input().split())
+
+li= []
+li.append(x)
+li.append(y)
+li.append(w - x)
+li.append(h - y)
+
+li.sort()
+print(li[0])
