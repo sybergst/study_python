@@ -313,13 +313,12 @@
 #     else:
 #         print(li[-1] - li[0])
 
-x, y, w, h = map(int, input().split())
+li = 0
+for i in range(5):
+    a = int(input())
+    if a < 40:
+        li += 40
+    else:
+        li += a
 
-li= []
-li.append(x)
-li.append(y)
-li.append(w - x)
-li.append(h - y)
-
-li.sort()
-print(li[0])
+print(li // 5)
