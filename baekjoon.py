@@ -338,7 +338,7 @@ for j in range(N):
     loc = [i for i in range(N)] 
     result = list(combinations(loc, j))
     # wei = item[i][0] + item[j][0]
-    # if wei <= K:
+    # if wei <= K: 
     #     value.append(value_cost)
     for combo in result: print(combo)
-        
+         
