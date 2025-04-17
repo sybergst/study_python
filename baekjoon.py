@@ -312,13 +312,33 @@
 #         print(-1.0)
 #     else:
 #         print(li[-1] - li[0])
+from itertools import combinations
 
-li = 0
-for i in range(5):
-    a = int(input())
-    if a < 40:
-        li += 40
-    else:
-        li += a
+N, K = map(int, input().split())
+item =[]
+value = []
 
-print(li // 5)
+for i in range(N):
+    item.append(list(map(int, input().split())))
+    wei = item[i][0]
+    if wei <= K:
+            value.append(item[i][1])
+
+# for i in range(N):
+#     for j in range(i + 1, N - i):
+#         value_cost = item[i][1] + item[j][1]
+#         wei = item[i][0] + item[j][0]
+#         if wei <= K:
+#             value.append(value_cost)
+
+# value.sort()
+# print(value[-1])
+
+for j in range(N):
+    loc = [i for i in range(N)] 
+    result = list(combinations(loc, j))
+    # wei = item[i][0] + item[j][0]
+    # if wei <= K:
+    #     value.append(value_cost)
+    for combo in result: print(combo)
+        
