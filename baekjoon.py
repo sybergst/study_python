@@ -316,29 +316,29 @@ from itertools import combinations
 
 N, K = map(int, input().split())
 item =[]
-value = []
+value = 0
 
 for i in range(N):
     item.append(list(map(int, input().split())))
-    wei = item[i][0]
-    if wei <= K:
-            value.append(item[i][1])
 
-# for i in range(N):
-#     for j in range(i + 1, N - i):
-#         value_cost = item[i][1] + item[j][1]
-#         wei = item[i][0] + item[j][0]
-#         if wei <= K:
-#             value.append(value_cost)
+
 
 # value.sort()
 # print(value[-1])
 
 for j in range(N):
     loc = [i for i in range(N)] 
-    result = list(combinations(loc, j))
     # wei = item[i][0] + item[j][0]
     # if wei <= K: 
     #     value.append(value_cost)
-    for combo in result: print(combo)
-         
+    for combo in list(combinations(loc, j)):
+        v = 0
+        wei = 0
+        for j in range(len(combo)):
+            v += item[combo[j]][1]
+            wei += item[combo[j]][0]
+        if wei <= K:
+            if value > v:
+                value == v
+# print(value)
+print(value)
