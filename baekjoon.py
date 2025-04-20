@@ -312,33 +312,4 @@
 #         print(-1.0)
 #     else:
 #         print(li[-1] - li[0])
-from itertools import combinations
 
-N, K = map(int, input().split())
-item =[]
-value = 0
-
-for i in range(N):
-    item.append(list(map(int, input().split())))
-
-
-
-# value.sort()
-# print(value[-1])
-
-for j in range(N):
-    loc = [i for i in range(N)] 
-    # wei = item[i][0] + item[j][0]
-    # if wei <= K: 
-    #     value.append(value_cost)
-    for combo in list(combinations(loc, j)):
-        v = 0
-        wei = 0
-        for j in range(len(combo)):
-            v += item[combo[j]][1]
-            wei += item[combo[j]][0]
-        if wei <= K:
-            if value > v:
-                value == v
-# print(value)
-print(value)
