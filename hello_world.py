@@ -125,3 +125,10 @@
 # except MyError as e:
 #     print(e)
 
+#1부테 n까지의 합 구하기(내장함수로!)
+
+n = int(input())
+
+num_sum = sum(range(1, n + 1))
+
+print(num_sum)
