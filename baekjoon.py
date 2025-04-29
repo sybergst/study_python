@@ -312,4 +312,22 @@
 #         print(-1.0)
 #     else:
 #         print(li[-1] - li[0])
+#소수의 개수 구하기!
+# num = int(input())
+# lis = list(map(int, input().split()))
+# count = 0
+
+# def find_sosu(n):
+#     if n == 1:
+#         return False
+#     else:
+#         for i in range(2, int(n ** 0.5) + 1):
+#             if n % i == 0:
+#                 return False
+#         return True
+
+# for j in range(num):
+#     if find_sosu(lis[j]):
+#         count += 1
+# print(count)
 
